@@ -3,8 +3,8 @@ server {
   server_name cdn.islamic.network;
 
   add_header X-Proxy-Cache $upstream_cache_status;
-  add_header x-CDN-Server $hostname;
-  add_header x-CDN-Provider "Islamic Network";
+  add_header X-CDN-Server $hostname;
+  add_header X-CDN-Provider "Islamic Network";
 
   location / {
     proxy_cache cdn;
