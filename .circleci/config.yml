@@ -19,6 +19,5 @@ workflows:
     jobs:
       - path-filtering/filter:
           base-revision: master
-          config-path: .circleci/config.yml
           mapping: |
             purge/files.txt purge-cache true
