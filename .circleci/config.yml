@@ -8,18 +8,17 @@ executors:
       - image: islamicnetwork/php:8.0-cli
     working_directory: ~/repo
 jobs:
-  build-app:
+  purge-cache:
     executor: php8
     steps:
       - checkout
       - run: echo "test"
   
 workflows:
-  version: 2.1
   cdn-purge:
     jobs:
       - path-filtering/filter:
           base-revision: master
           config-path: .circleci/config.yml
           mapping: |
-              purge/files.txt purge-cache true
+            purge/files.txt purge-cache true
