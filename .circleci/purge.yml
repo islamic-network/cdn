@@ -1,5 +1,10 @@
 version: 2.1
 
+parameters:
+  purge-cdn-cache-workflow:
+    type: boolean
+    default: false
+
 executors:
   php8:
     docker:
