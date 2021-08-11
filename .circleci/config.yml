@@ -1,7 +1,4 @@
 version: 2.1
-setup: true
-orbs:
-  path-filtering: circleci/path-filtering@0.0.2
 
 executors:
   php8:
@@ -17,7 +14,9 @@ jobs:
 workflows:
   cdn-purge:
     jobs:
-      - path-filtering/filter:
-          base-revision: master
+      - purge-cache:
+          filters:
+            branches:
+              only: master
           mapping: |
             purge/files.txt purge-cache true
