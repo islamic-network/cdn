@@ -12,7 +12,6 @@ jobs:
   purge-cache:
     executor: php8
     steps:
-      - checkout
       - run: echo "test"
   
 workflows:
@@ -20,6 +19,6 @@ workflows:
     jobs:
       - path-filtering/filter:
           base-revision: master
-          config-path: .circleci/continue-config.yml
+          config-path: .circleci/continue.yml
           mapping: |
             purge/files.txt purge-cache true
