@@ -10,4 +10,4 @@ workflows:
           base-revision: master
           config-path: .circleci/purge.yml
           mapping: |
-            purge/files.txt purge-cdn-cache-workfllow true
+            purge/files.txt purge-cdn-cache-workflow true

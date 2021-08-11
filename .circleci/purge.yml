@@ -13,7 +13,7 @@ jobs:
   
 workflows:
   purge-cdn-cache-workflow:
-    when: << pipeline.parameters.purge-cache-job >>
+    when: << pipeline.parameters.purge-cache-cdn-workflow >>
     jobs:
       - purge-cache:
           filters:
