@@ -1,0 +1,21 @@
+version: 2.1
+
+executors:
+  php8:
+    docker:
+      - image: islamicnetwork/php:8.0-cli
+    working_directory: ~/repo
+jobs:
+  purge-cache:
+    executor: php8
+    steps:
+      - run: echo "test"
+  
+workflows:
+  purge-cdn-cache-workflow:
+    when: << pipeline.parameters.purge-cache-job >>
+    jobs:
+      - purge-cache:
+          filters:
+            branches:
+              only: master
