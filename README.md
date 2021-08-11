@@ -30,3 +30,7 @@ scp -P 17700 -r root@sg.cdn.islamic.network:/etc/nginx/sites-available/* /etc/ng
 
 # Local Development
  docker run -v /home/meezaan/code/islamic-network/cdn/nginx/nginx.conf:/etc/nginx/nginx.conf -v /home/meezaan/code/islamic-network/cdn/nginx/sites-available/cdn.islamic.network.conf.dev:/etc/nginx/sites-enabled/cdn.islamic.network.conf -p 80:80 nginx:1.14.2
+
+# Netdata
+
+bash <(curl -Ss https://my-netdata.io/kickstart.sh) --disable-telemetry

@@ -1,0 +1,25 @@
+version: 2.1
+orbs:
+  path-filtering: circleci/path-filtering@0.0.2
+
+executors:
+  php8:
+    docker:
+      - image: islamicnetwork/php:8.0-cli
+    working_directory: ~/repo
+jobs:
+  build-app:
+    executor: php8
+    steps:
+      - checkout
+      - run: echo "test"
+  
+workflows:
+  version: 2.1
+  cdn-purge:
+    jobs:
+      - path-filtering/filter:
+          base-revision: main
+          config-path: .circleci/config.yml
+          mapping: |
+              purge/files.txt purge-cache true
