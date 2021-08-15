@@ -14,6 +14,7 @@ jobs:
   purge-cache-br:
     executor: php8
     steps:
+      - checkout
       - add_ssh_keys:
         fingerprints:
           - "b3:99:a0:64:57:b5:4a:c8:6b:5f:e4:1f:01:7a:69:a3"
