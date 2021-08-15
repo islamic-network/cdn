@@ -11,16 +11,19 @@ executors:
       - image: islamicnetwork/php:8.0-cli
     working_directory: ~/repo
 jobs:
-  purge-cache:
+  purge-cache-br:
     executor: php8
     steps:
-      - run: echo "test"
+      - run:
+        command: |
+          ssh circleci@br.cdn.islamic.network -p 17700
+          echo "test"
   
 workflows:
   purge-cdn-cache-workflow:
     when: << pipeline.parameters.purge-cdn-cache-workflow >>
     jobs:
-      - purge-cache:
+      - purge-cache-br:
           filters:
             branches:
               only: master

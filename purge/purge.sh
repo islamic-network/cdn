@@ -1,4 +1,7 @@
 #!/bin/bash
+
+files=$( cat files.txt )
+
 if [ -z "$1" ]
 then
     echo "Purging all cache"
