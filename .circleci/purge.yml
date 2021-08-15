@@ -12,6 +12,7 @@ executors:
     working_directory: ~/repo
 jobs:
   purge-cache-br:
+    executor: php8
     steps:
       - add_ssh_keys:
         fingerprints:
