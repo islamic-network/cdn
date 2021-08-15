@@ -1,12 +1,11 @@
 # Cert issueance
 
-acme.sh --issue --dns dns_zilore -d cdn.islamic.network --reloadcmd "service nginx reload"
+acme.sh --issue --dns dns_cf -d cdn.islamic.network --reloadcmd "service nginx reload"
 acme.sh --issue --dns dns_cf -d cdn.aladhan.com --reloadcmd "service nginx reload"
 
 
 # Setup
-sg.cdn.islamic.network is the primary node. Cert issued only on this node. All other CDN nodes copy
-ssl certs and nginx config from this node.
+sg.cdn.islamic.network is the primary node. 
 
 ## Copy Certs
 Syncs once a month
