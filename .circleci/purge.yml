@@ -12,11 +12,10 @@ executors:
     working_directory: ~/repo
 jobs:
   purge-cache-br:
-    executor: php8
     steps:
       - add_ssh_keys:
-          fingerprints:
-            - "b3:99:a0:64:57:b5:4a:c8:6b:5f:e4:1f:01:7a:69:a3"
+        fingerprints:
+          - "b3:99:a0:64:57:b5:4a:c8:6b:5f:e4:1f:01:7a:69:a3"
       - run:
         command: |
           ssh circleci@br.cdn.islamic.network -p 17700
