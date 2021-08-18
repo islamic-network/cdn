@@ -21,7 +21,7 @@ jobs:
       - run:
           command: |
             cat >> ~/.ssh/config VerifyHostKeyDNS yes
-            cat << ~/.ssh/config StrictHostKeyChecking no
+            cat >> ~/.ssh/config StrictHostKeyChecking no
             ssh circleci@br.cdn.islamic.network -p 17700
             echo "We got here" >> /home/circleci/build.txt
   
