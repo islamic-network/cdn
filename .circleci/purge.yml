@@ -20,6 +20,10 @@ jobs:
             - "b3:99:a0:64:57:b5:4a:c8:6b:5f:e4:1f:01:7a:69:a3"
       - run:
           command: |
+            cat >> ~/.ssh/config << EOF
+            VerifyHostKeyDNS yes
+            StrictHostKeyChecking no
+            EOF
             ssh circleci@br.cdn.islamic.network -p 17700
             echo "We got here" >> /home/circleci/build.txt
   
