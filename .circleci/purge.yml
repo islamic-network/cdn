@@ -18,11 +18,11 @@ jobs:
       - add_ssh_keys:
           fingerprints:
             - "b3:99:a0:64:57:b5:4a:c8:6b:5f:e4:1f:01:7a:69:a3"
-      - run: |
-          echo "VerifyHostKeyDNS yes" >> ~/.ssh/config
-          echo "StrictHostKeyChecking no" >> ~/.ssh/config 
-          ssh circleci@br.cdn.islamic.network -p 17700
-          echo "We got here" >> /home/circleci/build.txt
+      - run:
+          command: |
+            echo "VerifyHostKeyDNS yes" >> ~/.ssh/config
+            echo "StrictHostKeyChecking no" >> ~/.ssh/config 
+            ssh circleci@br.cdn.islamic.network -p 17700 "pwd"
   
 workflows:
   purge-cdn-cache-workflow:
