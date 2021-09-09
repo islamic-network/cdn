@@ -1,14 +1,16 @@
-#!/bin/bash
+#!/bin/sh
 
-files=$( cat files.txt )
-
-if [ -z "$1" ]
+if [ $1 = "all" ]
 then
     echo "Purging all cache"
     rm -rf /var/cache/cdn/*
 else
-    echo "Purging $1"
-    FILE=`echo -n "$1" | md5sum | awk '{print $1}'`
-        FULLPATH=/var/cache/cdn/${FILE:31:1}/${FILE:29:2}/${FILE}
-    rm -f "${FULLPATH}"
+  while read p; do
+    echo "Purging $p..."
+    FILE=`echo -n "$p" | md5sum | awk '{print $p}'`
+    FULLPATH=/var/cache/cdn/${FILE:31:1}/${FILE:29:2}/${FILE}
+    rm -rf "${FULLPATH}"
+    echo "Done!"
+  done <files.txt
 fi
+
