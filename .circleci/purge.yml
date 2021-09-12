@@ -12,7 +12,7 @@ executors:
     working_directory: ~/repo
 
 jobs:
-  purge-cache-br:
+  purge-cache-au:
     executor: php8
     steps:
       - add_ssh_keys:
@@ -22,13 +22,37 @@ jobs:
           command: |
             echo "VerifyHostKeyDNS yes" >> ~/.ssh/config
             echo "StrictHostKeyChecking no" >> ~/.ssh/config 
-            ssh circleci@br.cdn.islamic.network -p 17700 "pwd"
+            ssh circleci@au.cdn.islamic.network -p 17700 "git clone git@github.com:islamic-network/cdn.git && cd cdn/purge && ./purge.sh && cd ../../ && rm -rf cdn"
   
 workflows:
   purge-cdn-cache-workflow:
     when: << pipeline.parameters.purge-cdn-cache-workflow >>
     jobs:
-      - purge-cache-br:
+      - purge-cache-au:
+          filters:
+            branches:
+              only: master
+      - purge-cache-in:
+          filters:
+            branches:
+              only: master
+      - purge-cache-sg:
+          filters:
+            branches:
+              only: master
+      - purge-cache-de:
+          filters:
+            branches:
+              only: master
+      - purge-cache-uk:
+          filters:
+            branches:
+              only: master
+      - purge-cache-us:
+          filters:
+            branches:
+              only: master
+      - purge-cache-ca:
           filters:
             branches:
               only: master
