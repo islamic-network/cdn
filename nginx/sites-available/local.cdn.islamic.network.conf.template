@@ -1,0 +1,16 @@
+server {
+#  listen 443 ssl http2;
+  listen 80;
+  server_name ${LOCAL_CDN_HOSTNAME} "";
+  
+  add_header X-Proxy-Cache $upstream_cache_status;
+  add_header X-CDN-PoP ${POP};
+  add_header X-CDN-Provider "Islamic Network";
+
+  location / {
+    proxy_cache cdn;
+    proxy_cache_key $uri$is_args$args;
+    proxy_cache_valid 90d;
+    proxy_pass http://${ISLAMIC_NETWORK_CDN_ORIGIN};
+    }
+  }
