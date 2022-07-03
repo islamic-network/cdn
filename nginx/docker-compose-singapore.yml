@@ -21,7 +21,6 @@ services:
       - certs:/etc/certs
     privileged: true
     container_name: islamic-network-cdn
-    restart: always
     logging:
       driver: "gelf"
       options:
