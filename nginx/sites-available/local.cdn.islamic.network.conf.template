@@ -3,7 +3,7 @@ server {
   listen 80;
   server_name ${LOCAL_CDN_HOSTNAME} "";
 
-  ssl_certificate /etc/certs/cdn.islamic.network.cer;
+  ssl_certificate /etc/certs/fullchain.cer;
   ssl_certificate_key /etc/certs/cdn.islamic.network.key;
   
   add_header X-Proxy-Cache $upstream_cache_status;
