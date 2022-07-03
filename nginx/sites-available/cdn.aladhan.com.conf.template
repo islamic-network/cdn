@@ -1,7 +1,9 @@
 server {
-#  listen 443 ssl http2;
+  listen 443 ssl http2;
   listen 80;
   server_name cdn.aladhan.com;
+  ssl_certificate /etc/certs/cdn.islamic.network.cer;
+  ssl_certificate_key /etc/certs/cdn.islamic.network.key;
 
   add_header X-Proxy-Cache $upstream_cache_status;
   add_header X-CDN-Server ${POP};
