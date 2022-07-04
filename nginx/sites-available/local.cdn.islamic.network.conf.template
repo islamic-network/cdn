@@ -17,7 +17,6 @@ server {
     proxy_cache_key $uri$is_args$args$slice_range;
     proxy_cache_valid 90d;
     proxy_pass http://${ISLAMIC_NETWORK_CDN_ORIGIN};
-    proxy_cache_purge $purge_method;
     proxy_cache_valid  200 206 30d;
     proxy_set_header   Range $slice_range;
     
