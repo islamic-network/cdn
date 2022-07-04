@@ -1,4 +1,4 @@
-# Islamic Netowrk CDN
+# Islamic Network CDN
 
 This is the harness used for the Islamic Network CDN. It's effectively ready to be used by anyone who wants to build a CDN.
 
