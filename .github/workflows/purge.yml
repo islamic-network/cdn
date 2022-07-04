@@ -24,4 +24,4 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key:  ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          script: echo ${{ steps.vars.outputs.purgepath }}
+          script: docker exec -it islamic-network-cdn ./purge ${{ steps.vars.outputs.purgepath }} /var/cache/cdn
