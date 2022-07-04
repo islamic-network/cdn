@@ -36,7 +36,7 @@ s3cmd -c ~/.s3cfg_in_us --recursive --force --acl-public --add-header="Cache-Con
 
 ### Generating Certificates on the first node
 
-Instal acme.sh:
+Install acme.sh:
 
 ```
 wget -O - https://get.acme.sh | bash; source ~/.bashrc
