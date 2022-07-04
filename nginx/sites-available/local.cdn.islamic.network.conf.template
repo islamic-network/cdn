@@ -12,13 +12,12 @@ server {
 
   location / {
     
-    slice;
-    slice_start_arg s;
-    slice_end_arg e;
+    slice 1m;
     proxy_cache cdn;
-    proxy_cache_key $uri$is_args$args;
-    proxy_cache_valid 90d;
+    proxy_cache_key $uri$is_args$args$slice_range;
+    proxy_cache_valid 200 206 90d;
     proxy_pass http://${ISLAMIC_NETWORK_CDN_ORIGIN};
+    proxy_set_header Range $slice_range;
     
     }
   }
