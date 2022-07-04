@@ -1,0 +1,37 @@
+version: '3'
+services:
+  #######################################
+  # NGINX Docker container
+  #######################################
+  nginx:
+    image: islamicnetwork/cdn:12
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+    environment:
+      ISLAMIC_NETWORK_CDN_ORIGIN: "cdn.islamic.network.eu-central-1.linodeobjects.com"
+      ALADHAN_CDN_ORIGIN: "cdn.aladhan.com.ap-south-1.linodeobjects.com"
+      LOCAL_CDN_HOSTNAME: "cdn.london.islamic.network"
+      POP: "London"
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - cdn:/var/cache/cdn
+      - certs:/etc/certs
+    privileged: true
+    container_name: islamic-network-cdn
+    logging:
+      driver: "gelf"
+      options:
+        gelf-address: "tcp://log.islamic.network:5555"
+        tag: "cdn-london"
+
+volumes:
+  cdn:
+  certs:
+    driver: local
+    driver_opts:
+      o: bind
+      type: none
+      device: /root/.acme.sh/cdn.islamic.network
