@@ -14,19 +14,18 @@ but relevant for users who consume assets on the Islamic Network CDN.
 
 ### Purging cache
 
-To purge a particular item from the cache, on the host, run:
+To purge a file:
 
 ```
 docker exec -it islamic-network-cdn ./purge /quran/audio-surah/128/ar.alafasy/1.mp3 /var/cache/cdn
 ```
 
-to flush a file or
+To purge a directory / path:
 
 ```
 docker exec -it islamic-network-cdn ./purge /quran/audio-surah/128/ar.alafasy /var/cache/cdn
 ```
 
-to flush an entire directory / path.
 
 
 ### Uploading files to an s3 bucket  (this is a sample for 1 region)
