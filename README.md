@@ -5,8 +5,8 @@ This is the harness used for the Islamic Network CDN. It's effectively ready to 
 It contains 3 directories:
 
 * nginx - This directory contains all the NGINX and Docker configuration for the CDN
-* purge - This directory contains a bash script to purge assets from the CDN. This is a hard fallback, as there is actual purging enabled via NGINX
-itself. This was the MVP for purging.
+* purge - This directory contains a bash script to purge assets from the CDN. There is no purging module in NGINX community edition, so this is
+warranted.
 * info - this is purely information and has files that are linked from outside of this repo and the CDN. It's not really related to the CDN setup, 
 but relevant for users who consume assets on the Islamic Network CDN.
 
