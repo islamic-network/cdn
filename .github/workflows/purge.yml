@@ -14,7 +14,7 @@ jobs:
         uses: appleboy/ssh-action@v0.1.4
         with:
           host: ${{ secrets.HOST_DALLAS }}
-          user: ${{ secrets.SSH_USER }}
+          username: ${{ secrets.SSH_USER }}
           key:  ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: whoami
