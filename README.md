@@ -50,5 +50,5 @@ Then generate the certificates:
 These then need to be copied to all the other nodes via a monthly cronjob. This cron should be configured on the primary host for every PoP:
 
 ```
-scp -r -P 17700 /root/.acme.sh/cdn.islamic.network/* root@cdn.mumbai.islamic.network:/root/.acme.sh/cdn.islamic.network/ && ssh -t root@cdn.mumbai.islamic.network -p 17700 "docker exec -it islamic-network-cdn nginx -s reload"
+scp -r -P XXXXX /root/.acme.sh/cdn.islamic.network/* root@cdn.mumbai.islamic.network:/root/.acme.sh/cdn.islamic.network/ && ssh -t root@cdn.mumbai.islamic.network -p XXXXX  "docker exec -it islamic-network-cdn nginx -s reload"
 ```
