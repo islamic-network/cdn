@@ -13,6 +13,8 @@ server {
   location / {
     
     slice 1m;
+    slice_start_arg s;
+    slice_end_arg e;
     proxy_cache cdn;
     proxy_cache_key $uri$is_args$args;
     proxy_cache_valid 90d;
