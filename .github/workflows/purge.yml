@@ -4,7 +4,7 @@ on:
     paths:
       - "purge/**"
 jobs:
-  Explore-GitHub-Actions:
+  Purge-Dallas-PoP:
     runs-on: ubuntu-latest
     steps:
       - run: echo "🎉 The job was triggered by a ${{ github.event_name }} event."
