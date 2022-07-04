@@ -6,9 +6,10 @@ It contains 3 directories:
 
 * nginx - This directory contains all the NGINX and Docker configuration for the CDN
 warranted.
-* info - this is purely information and has files that are linked from outside of this repo and the CDN. It's not really related to the CDN setup, 
+* info - This is purely information and has files that are linked from outside of this repo and the CDN. It's not really related to the CDN setup, 
 but relevant for users who consume assets on the Islamic Network CDN.
-
+* purge - This directory triggers the pipeline to actually purge the cache from all the PoPs. Just update the paths.txt file's first line with what needs to be purged.
+Many thanks to https://github.com/perusio/nginx-cache-purge for this script.
 
 ## Notes
 
