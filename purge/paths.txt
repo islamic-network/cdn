@@ -1,1 +1,1 @@
-/quran/audio-surah/128/ar.alafasy
+/quran/audio/64/ar.minshawimujawwad/4115.mp3
