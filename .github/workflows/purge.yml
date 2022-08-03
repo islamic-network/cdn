@@ -20,7 +20,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key:  ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          script: sudo docker exec -t islamic-network-cdn ./purge ${{ steps.vars.outputs.purgepath }} /var/cache/cdn
+          script: sudo docker exec -t islamic-network-cdn ./purge ${{ steps.vars.outputs.purgepath }} /var/cache/cdn || true
   Purge-Dallas-PoP:
     runs-on: ubuntu-latest
     steps:
@@ -37,7 +37,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key:  ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          script: sudo docker exec -t islamic-network-cdn ./purge ${{ steps.vars.outputs.purgepath }} /var/cache/cdn
+          script: sudo docker exec -t islamic-network-cdn ./purge ${{ steps.vars.outputs.purgepath }} /var/cache/cdn || true
   Purge-Newark-PoP:
     runs-on: ubuntu-latest
     steps:
@@ -54,7 +54,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key:  ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          script: sudo docker exec -t islamic-network-cdn ./purge ${{ steps.vars.outputs.purgepath }} /var/cache/cdn
+          script: sudo docker exec -t islamic-network-cdn ./purge ${{ steps.vars.outputs.purgepath }} /var/cache/cdn || true
   Purge-London-PoP:
     runs-on: ubuntu-latest
     steps:
@@ -71,7 +71,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key:  ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          script: sudo docker exec -t islamic-network-cdn ./purge ${{ steps.vars.outputs.purgepath }} /var/cache/cdn
+          script: sudo docker exec -t islamic-network-cdn ./purge ${{ steps.vars.outputs.purgepath }} /var/cache/cdn || true
   Purge-Frankfurt-PoP:
     runs-on: ubuntu-latest
     steps:
@@ -88,7 +88,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key:  ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          script: sudo docker exec -t islamic-network-cdn ./purge ${{ steps.vars.outputs.purgepath }} /var/cache/cdn
+          script: sudo docker exec -t islamic-network-cdn ./purge ${{ steps.vars.outputs.purgepath }} /var/cache/cdn || true
   Purge-Mumbai-PoP:
     runs-on: ubuntu-latest
     steps:
@@ -105,7 +105,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key:  ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          script: sudo docker exec -t islamic-network-cdn ./purge ${{ steps.vars.outputs.purgepath }} /var/cache/cdn
+          script: sudo docker exec -t islamic-network-cdn ./purge ${{ steps.vars.outputs.purgepath }} /var/cache/cdn || true
   Purge-Singapore-PoP:
     runs-on: ubuntu-latest
     steps:
@@ -122,7 +122,7 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key:  ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          script: sudo docker exec -t islamic-network-cdn ./purge ${{ steps.vars.outputs.purgepath }} /var/cache/cdn
+          script: sudo docker exec -t islamic-network-cdn ./purge ${{ steps.vars.outputs.purgepath }} /var/cache/cdn || true
   Purge-Sydney-PoP:
     runs-on: ubuntu-latest
     steps:
@@ -139,4 +139,4 @@ jobs:
           username: ${{ secrets.SSH_USER }}
           key:  ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
-          script: sudo docker exec -t islamic-network-cdn ./purge ${{ steps.vars.outputs.purgepath }} /var/cache/cdn
+          script: sudo docker exec -t islamic-network-cdn ./purge ${{ steps.vars.outputs.purgepath }} /var/cache/cdn || true
