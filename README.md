@@ -31,7 +31,7 @@ docker exec -it islamic-network-cdn ./purge /quran/audio-surah/128/ar.alafasy /v
 
 ### Uploading files to an s3 bucket  (this is a sample for 1 region)
 ```
-s3cmd -c ~/.s3cfg_in_us --recursive --force --acl-public --add-header="Cache-Control: public, max-age=2628000" --add-header="expires: access plus 30 days" put /loca/src/* s3://cdn.islamic.network/quran/audio/
+s3cmd -c ~/.s3cfg_in_us --recursive --force --acl-public --add-header="Cache-Control: public, max-age=2628000" --add-header="expires: access plus 30 days" put /local/src/* s3://cdn.islamic.network/quran/audio/
 ```
 
 ### Generating Certificates on the first node
