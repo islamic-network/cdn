@@ -19,10 +19,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script_stop: true
           script: |
-            sudo -S \
-              pwd \
-              whoami \ 
-              cd \/root\/cdn\/nginx && pwd && git pull origin master --rebase && docker compose -f docker-compose-dubai.yml up -d
+            sudo -S cd /root/cdn/nginx && pwd && git pull origin master --rebase && docker compose -f docker-compose-dubai.yml up -d
 #  Update-Newark-PoP:
 #    runs-on: ubuntu-latest
 #    steps:
