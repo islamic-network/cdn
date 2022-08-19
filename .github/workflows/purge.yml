@@ -1,5 +1,6 @@
 name: Purge CDN Cache
 on:
+  workflow_dispatch:
   push:
     paths:
       - "purge/**"

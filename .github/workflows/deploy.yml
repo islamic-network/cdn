@@ -20,7 +20,12 @@ jobs:
           script_stop: true
           script: |
             sudo -s \
-            cd /root/cdn && git pull origin master --rebase && cd nginx && docker compose -f docker-compose-dubai.yml up -d
+            cd /root/cdn \
+            pwd \
+            git pull origin master --rebase \
+            cd nginx \
+            pwd \
+            docker compose -f docker-compose-dubai.yml up -d
   Update-Dallas-PoP:
     runs-on: ubuntu-latest
     steps:
