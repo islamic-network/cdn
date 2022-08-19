@@ -1,0 +1,110 @@
+name: Deploy updated CDN container
+on:
+  push:
+    paths:
+      - "nginx/*.yml"
+jobs:
+  Update-Dubai-PoP:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: SSH Remote Commands
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: cdn.dubai.islamic.network
+          username: ${{ secrets.SSH_USER }}
+          key:  ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: cd /root/cdn/nginx && git pull origin master --rebase && docker compose -f docker-compose-dubai.yml up -d || true
+  Update-Dallas-PoP:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: SSH Remote Commands
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: cdn.dallas.islamic.network
+          username: ${{ secrets.SSH_USER }}
+          key:  ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: cd /root/cdn/nginx && git pull origin master --rebase && docker compose -f docker-compose-dallas.yml up -d || true
+  Update-Newark-PoP:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: SSH Remote Commands
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: cdn.newark.islamic.network
+          username: ${{ secrets.SSH_USER }}
+          key:  ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: cd /root/cdn/nginx && git pull origin master --rebase && docker compose -f docker-compose-newark.yml up -d || true
+  Update-London-PoP:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: SSH Remote Commands
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: cdn.london.islamic.network
+          username: ${{ secrets.SSH_USER }}
+          key:  ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: cd /root/cdn/nginx && git pull origin master --rebase && docker compose -f docker-compose-london.yml up -d || true
+  Update-Frankfurt-PoP:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: SSH Remote Commands
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: cdn.frankfurt.islamic.network
+          username: ${{ secrets.SSH_USER }}
+          key:  ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: cd /root/cdn/nginx && git pull origin master --rebase && docker compose -f docker-compose-frankfurt.yml up -d || true
+  Update-Mumbai-PoP:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: SSH Remote Commands
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: cdn.mumbai.islamic.network
+          username: ${{ secrets.SSH_USER }}
+          key:  ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: cd /root/cdn/nginx && git pull origin master --rebase && docker compose -f docker-compose-mumbai.yml up -d || true
+  Update-Singapore-PoP:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: SSH Remote Commands
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: cdn.singapore.islamic.network
+          username: ${{ secrets.SSH_USER }}
+          key:  ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: cd /root/cdn/nginx && git pull origin master --rebase && docker compose -f docker-compose-singapore.yml up -d || true
+  Update-Sydney-PoP:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: SSH Remote Commands
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: cdn.sydney.islamic.network
+          username: ${{ secrets.SSH_USER }}
+          key:  ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: cd /root/cdn/nginx && git pull origin master --rebase && docker compose -f docker-compose-sydney.yml up -d || true
