@@ -19,7 +19,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script_stop: true
           script: |
-            sudo \-s \
+            sudo -S \
               pwd \
               whoami \ 
               cd \/root\/cdn\/nginx && pwd && git pull origin master --rebase && docker compose -f docker-compose-dubai.yml up -d
