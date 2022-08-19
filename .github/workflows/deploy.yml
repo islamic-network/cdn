@@ -20,12 +20,7 @@ jobs:
           script_stop: true
           script: |
             sudo -s \
-            cd "/root/cdn" \
-            pwd \
-            git pull origin master --rebase \
-            cd nginx \
-            pwd \
-            docker compose -f docker-compose-dubai.yml up -d
+            cd /root/cdn && git pull origin master --rebase && docker compose -f docker-compose-dubai.yml up -d
   Update-Dallas-PoP:
     runs-on: ubuntu-latest
     steps:
@@ -40,7 +35,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             sudo -s \
-            cd /root/cdn && git pull origin master --rebase && cd nginx && docker compose -f docker-compose-dallas.yml up -d
+            cd /root/cdn/nginx && git pull origin master --rebase && docker compose -f docker-compose-dallas.yml up -d
   Update-Newark-PoP:
     runs-on: ubuntu-latest
     steps:
@@ -55,7 +50,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             sudo -s \
-            cd /root/cdn && git pull origin master --rebase && cd nginx && docker compose -f docker-compose-newark.yml up -d
+            cd /root/cdn/nginx && git pull origin master --rebase && docker compose -f docker-compose-newark.yml up -d
   Update-London-PoP:
     runs-on: ubuntu-latest
     steps:
@@ -70,7 +65,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             sudo -s \ 
-            cd /root/cdn && git pull origin master --rebase && cd nginx && docker compose -f docker-compose-london.yml up -d
+            cd /root/cdn/nginx && git pull origin master --rebase && docker compose -f docker-compose-london.yml up -d
   Update-Frankfurt-PoP:
     runs-on: ubuntu-latest
     steps:
@@ -85,7 +80,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             sudo -s \
-            cd /root/cdn && git pull origin master --rebase && cd nginx && docker compose -f docker-compose-frankfurt.yml up -d
+            cd /root/cdn/nginx && git pull origin master --rebase && docker compose -f docker-compose-frankfurt.yml up -d
   Update-Mumbai-PoP:
     runs-on: ubuntu-latest
     steps:
@@ -100,7 +95,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             sudo -s \
-            cd /root/cdn && git pull origin master --rebase && cd nginx && docker compose -f docker-compose-mumbai.yml up -d
+            cd /root/cdn/nginx && git pull origin master --rebase && docker compose -f docker-compose-mumbai.yml up -d
   Update-Singapore-PoP:
     runs-on: ubuntu-latest
     steps:
@@ -115,7 +110,7 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: | 
             sudo -s \ 
-            cd /root/cdn && git pull origin master --rebase && cd nginx && docker compose -f docker-compose-singapore.yml up -d
+            cd /root/cdn/nginx && git pull origin master --rebase && docker compose -f docker-compose-singapore.yml up -d
   Update-Sydney-PoP:
     runs-on: ubuntu-latest
     steps:
@@ -130,4 +125,4 @@ jobs:
           port: ${{ secrets.SSH_PORT }}
           script: |
             sudo -s \
-            cd /root/cdn && git pull origin master --rebase && cd nginx && docker compose -f docker-compose-sydney.yml up -d
+            cd /root/cdn/nginx && git pull origin master --rebase && docker compose -f docker-compose-sydney.yml up -d
