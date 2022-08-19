@@ -11,7 +11,7 @@ jobs:
       - name: Check out repository code
         uses: actions/checkout@v3
       - name: SSH Remote Commands
-        uses: garygrossgarten/github-action-ssh@release
+        uses: garygrossgarten/github-action-ssh@0.6.4
         with:
           host: cdn.dubai.islamic.network
           username: ${{ secrets.SSH_USER }}
