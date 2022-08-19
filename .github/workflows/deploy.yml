@@ -17,7 +17,7 @@ jobs:
           key:  ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: |
-          sudo -s \ 
+          sudo \-s 
           cd /root/cdn/nginx && git pull origin master --rebase && docker compose -f docker-compose-dubai.yml up -d
   Update-Dallas-PoP:
     runs-on: ubuntu-latest
