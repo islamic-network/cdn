@@ -20,7 +20,7 @@ jobs:
           script_stop: true
           script: |
             sudo -s \
-            cd /root/cdn \
+            cd "/root/cdn" \
             pwd \
             git pull origin master --rebase \
             cd nginx \
