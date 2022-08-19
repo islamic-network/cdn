@@ -1,5 +1,6 @@
 name: Deploy updated CDN container
 on:
+  workflow_dispatch: 
   push:
     paths:
       - "nginx/*.yml"
