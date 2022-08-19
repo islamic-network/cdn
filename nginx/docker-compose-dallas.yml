@@ -5,9 +5,6 @@ services:
   #######################################
   nginx:
     image: islamicnetwork/cdn:14
-#    build:
-#      context: .
-#      dockerfile: Dockerfile
     environment:
       ISLAMIC_NETWORK_CDN_ORIGIN: "cdn.islamic.network.us-east-1.linodeobjects.com"
       ALADHAN_CDN_ORIGIN: "cdn.aladhan.com.ap-south-1.linodeobjects.com"

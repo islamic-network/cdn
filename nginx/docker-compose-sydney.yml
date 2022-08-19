@@ -5,7 +5,7 @@ services:
   #######################################
   nginx:
     image: islamicnetwork/cdn:14
-#    build:
+
 #      context: .
 #      dockerfile: Dockerfile
     environment:
