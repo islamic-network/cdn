@@ -1,0 +1,23 @@
+server {
+  listen 443 ssl http2;
+  listen 80;
+  server_name 1.cdn.mamluk.net;
+
+  ssl_certificate /etc/certs/fullchain.cer;
+  ssl_certificate_key /etc/certs/cdn.islamic.network.key;
+  
+  add_header X-Proxy-Cache $upstream_cache_status;
+  add_header X-CDN-PoP ${POP};
+  add_header X-CDN-Provider "Islamic Network";
+
+  location / {
+
+    slice 1m;
+    proxy_cache cdn;
+    proxy_cache_key $uri$is_args$args$slice_range;
+    proxy_cache_valid 200 206 90d;
+    proxy_pass http://${ISLAMIC_NETWORK_CDN_ORIGIN};
+    proxy_set_header Range $slice_range;
+
+    }
+  }
