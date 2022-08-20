@@ -25,5 +25,5 @@ jobs:
           context: ./build
           file: build/common/Dockerfile
           tags: |
-            meezaan/cdn:latest
-            meezaan/cdn:${{ github.ref_name }}
+            islamicnetwork/cdn:latest
+            islamicnetwork/cdn:${{ github.ref_name }}

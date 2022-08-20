@@ -23,7 +23,7 @@ jobs:
         with:
           push: true
           context: ./build
-          file: build/dubai/Dockerfile
+          file: build/helsinki/Dockerfile
           tags: |
-            islamicnetwork/cdn:dubai-latest
-            islamicnetwork/cdn:dubai-${{ github.ref_name }}
+            islamicnetwork/cdn:helsinki-latest
+            islamicnetwork/cdn:helsinki-${{ github.ref_name }}
