@@ -2,6 +2,8 @@ name: Deploy to Mumbai PoP
 on:
   workflow_dispatch: 
   push:
+    branches:
+      - master
     paths:
       - "deploy/docker-compose-mumbai.yml"
 jobs:

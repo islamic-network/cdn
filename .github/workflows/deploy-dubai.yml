@@ -2,6 +2,8 @@ name: Deploy to Dubai PoP
 on:
   workflow_dispatch: 
   push:
+    branches:
+      - master
     paths:
       - "deploy/docker-compose-dubai.yml"
 jobs:

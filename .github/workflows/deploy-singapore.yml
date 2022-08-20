@@ -2,6 +2,8 @@ name: Deploy to Singapore PoP
 on:
   workflow_dispatch: 
   push:
+    branches:
+      - master
     paths:
       - "deploy/docker-compose-singapore.yml"
 jobs:

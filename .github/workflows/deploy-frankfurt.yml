@@ -2,6 +2,8 @@ name: Deploy to Frankfurt PoP
 on:
   workflow_dispatch: 
   push:
+    branches:
+      - master
     paths:
       - "deploy/docker-compose-frankfurt.yml"
 jobs:

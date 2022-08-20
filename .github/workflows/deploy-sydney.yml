@@ -2,6 +2,8 @@ name: Deploy to Sydney PoP
 on:
   workflow_dispatch: 
   push:
+    branches:
+      - master
     paths:
       - "deploy/docker-compose-sydney.yml"
 jobs:

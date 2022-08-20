@@ -2,6 +2,8 @@ name: Deploy to Dallas PoP
 on:
   workflow_dispatch: 
   push:
+    branches:
+      - master
     paths:
       - "deploy/docker-compose-dallas.yml"
 jobs:
