@@ -23,7 +23,7 @@ jobs:
         with:
           push: true
           context: ./build
-          file: common/Dockerfile
+          file: build/common/Dockerfile
           tags: |
             meezaan/cdn:latest
             meezaan/cdn:${{ github.ref_name }}
