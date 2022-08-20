@@ -20,7 +20,7 @@ jobs:
         uses: docker/build-push-action@v2
         with:
           push: true
-          context: build
+          context: ./build
           file: common/Dockerfile
           tags: |
             meezaan/cdn:dubai-latest
