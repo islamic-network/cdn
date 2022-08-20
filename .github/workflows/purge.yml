@@ -2,6 +2,8 @@ name: Purge CDN Cache
 on:
   workflow_dispatch:
   push:
+    branches:
+      - master
     paths:
       - "purge/**"
 jobs:
