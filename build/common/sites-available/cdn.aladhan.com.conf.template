@@ -7,7 +7,7 @@ server {
 
   add_header X-Proxy-Cache $upstream_cache_status;
   add_header X-CDN-Server ${POP};
-  add_header X-CDN-Provider "Islamic Network";
+  add_header X-CDN-Provider "Islamic Network powered by Mamluk";
   
   location / {
     proxy_cache cdn;

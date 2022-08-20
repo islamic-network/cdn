@@ -1,0 +1,21 @@
+name: Deploy to Sydney PoP
+on:
+  workflow_dispatch: 
+  push:
+    paths:
+      - "deploy/docker-compose-sydney.yml"
+jobs:
+  Update-Sydney-PoP:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: SSH Remote Commands
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: cdn.sydney.islamic.network
+          username: ${{ secrets.SSH_USER }}
+          key:  ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: |
+            sudo -S sh -c 'cd /root/cdn && git pull origin master --rebase && cd /root/cdn/deploy && docker compose -f docker-compose-sydney.yml up -d'
