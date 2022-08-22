@@ -143,3 +143,20 @@ jobs:
           key:  ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: sudo docker exec -t islamic-network-cdn ./purge ${{ steps.vars.outputs.purgepath }} /var/cache/cdn || true
+  Purge-Helsinki-PoP:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository code
+        uses: actions/checkout@v3
+      - name: Get file(s) to purge
+        id: vars
+        run: echo ::set-output name=purgepath::$(cat purge/paths.txt)
+      - run: echo "The path to purge is " ${{ steps.vars.outputs.purgepath }}
+      - name: SSH Remote Commands
+        uses: appleboy/ssh-action@v0.1.4
+        with:
+          host: cdn.sydney.islamic.network
+          username: ${{ secrets.SSH_USER }}
+          key:  ${{ secrets.SSH_KEY }}
+          port: ${{ secrets.SSH_PORT }}
+          script: sudo docker exec -t islamic-network-cdn ./purge ${{ steps.vars.outputs.purgepath }} /var/cache/cdn || true
