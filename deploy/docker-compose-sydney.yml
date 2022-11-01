@@ -24,11 +24,11 @@ services:
     deploy:
       update_config:
         order: start-first
-    logging:
-      driver: "gelf"
-      options:
-        gelf-address: "tcp://log.islamic.network:5555"
-        tag: "cdn-sydney"
+#    logging:
+#      driver: "gelf"
+#      options:
+#        gelf-address: "tcp://log.islamic.network:5555"
+#        tag: "cdn-sydney"
 
 volumes:
   cdn:
