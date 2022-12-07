@@ -54,6 +54,6 @@ These then need to be copied to all the other nodes via a monthly cronjob. This 
 scp -r -P XXXXX /root/.acme.sh/cdn.islamic.network/* root@cdn.mumbai.islamic.network:/root/.acme.sh/cdn.islamic.network/ && ssh -t root@cdn.mumbai.islamic.network -p XXXXX  "docker exec -it islamic-network-cdn nginx -s reload"
 ```
 
-# Nodes that are not build and deployed via this repo:
+# Nodes that are not built and deployed via this repo:
 
 * Helsinki
