@@ -21,11 +21,11 @@ services:
     deploy:
       update_config:
         order: start-first
-#    logging:
-#      driver: "gelf"
-#      options:
-#        gelf-address: "tcp://log.islamic.network:5555"
-#        tag: "cdn-dallas"
+    logging:
+      driver: "gelf"
+      options:
+        gelf-address: "tcp://gl.mamluk.net:12201"
+        tag: "cdn-dallas"
 
 volumes:
   cdn:
