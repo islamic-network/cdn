@@ -1,4 +1,4 @@
-name: Docker Build - Dubai
+name: Docker Build - Singapore
 on:
   push:
     tags:
