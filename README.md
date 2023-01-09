@@ -45,7 +45,18 @@ wget -O - https://get.acme.sh | bash; source ~/.bashrc
 Then generate the certificates:
 
 ```
- acme.sh --issue --dns dns_cf -d cdn.islamic.network -d cdn.helsinki.islamic.network -d cdn.singapore.islamic.network -d cdn.london.islamic.network -d cdn.frankfurt.islamic.network -d cdn.mumbai.islamic.network -d cdn.sydney.islamic.network -d cdn.newark.islamic.network -d cdn.dallas.islamic.network -d cdn.aladhan.com --reloadcmd "docker exec -it islamic-network-cdn nginx -s reload"
+ acme.sh --issue --dns dns_cf -d cdn.islamic.network \
+ -d cdn.helsinki.islamic.network \
+ -d cdn.falkenstein.islamic.network \
+ -d cdn.singapore.islamic.network \
+ -d cdn.london.islamic.network \
+ -d cdn.mumbai.islamic.network \
+ -d cdn.sydney.islamic.network \
+ -d cdn.newark.islamic.network \
+ -d cdn.dallas.islamic.network \
+ -d cdn.dubai.islamic.network \
+ -d cdn.aladhan.com \
+ --reloadcmd "docker exec -it islamic-network-cdn nginx -s reload"
 ```
 
 These then need to be copied to all the other nodes via a monthly cronjob. This cron should be configured on the primary host for every PoP:
