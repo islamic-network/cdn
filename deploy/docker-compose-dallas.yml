@@ -4,7 +4,7 @@ services:
   # NGINX Docker container
   #######################################
   nginx:
-    image: islamicnetwork/cdn:26
+    image: islamicnetwork/cdn:28
     environment:
       ISLAMIC_NETWORK_CDN_ORIGIN: "cdn.islamic.network.us-east-1.linodeobjects.com"
       ALADHAN_CDN_ORIGIN: "cdn.aladhan.com.ap-south-1.linodeobjects.com"
