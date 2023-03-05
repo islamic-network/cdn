@@ -9,7 +9,8 @@ services:
 #      context: .
 #      dockerfile: Dockerfile
     environment:
-      ISLAMIC_NETWORK_CDN_ORIGIN: "cdn.islamic.network.ap-south-1.linodeobjects.com"
+      ISLAMIC_NETWORK_CDN_ORIGIN: "cdn.islamic.network.eu-central-1.linodeobjects.com"
+      #ISLAMIC_NETWORK_CDN_ORIGIN: "cdn.islamic.network.ap-south-1.linodeobjects.com"
       ALADHAN_CDN_ORIGIN: "cdn.aladhan.com.ap-south-1.linodeobjects.com"
       LOCAL_CDN_HOSTNAME: "cdn.dubai.islamic.network"
       POP: "Dubai"
