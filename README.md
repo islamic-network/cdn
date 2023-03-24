@@ -68,3 +68,4 @@ scp -r -P XXXXX /root/.acme.sh/cdn.islamic.network/* root@cdn.mumbai.islamic.net
 # Nodes that are not built and deployed via this repo:
 
 * Helsinki
+* Falkenstein
