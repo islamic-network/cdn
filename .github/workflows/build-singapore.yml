@@ -25,5 +25,5 @@ jobs:
           context: ./build
           file: build/singapore/Dockerfile
           tags: |
-            islamicnetwork/cdn:singapore-latest
-            islamicnetwork/cdn:singapore-${{ github.ref_name }}
+            ghcr.io/islamic-network/cdn:singapore-latest
+            ghcr.io/islamic-network/cdn:singapore-${{ github.ref_name }}

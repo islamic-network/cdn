@@ -4,7 +4,7 @@ services:
   # NGINX Docker container
   #######################################
   nginx:
-    image: islamicnetwork/cdn:28
+    image: ghcr.io/islamic-network/cdn:28
 
 #      context: .
 #      dockerfile: Dockerfile

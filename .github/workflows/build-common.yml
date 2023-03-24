@@ -25,5 +25,5 @@ jobs:
           context: ./build
           file: build/common/Dockerfile
           tags: |
-            islamicnetwork/cdn:latest
-            islamicnetwork/cdn:${{ github.ref_name }}
+            ghcr.io/islamic-network/cdn:latest
+            ghcr.io/islamic-network/cdn:${{ github.ref_name }}

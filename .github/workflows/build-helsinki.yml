@@ -25,5 +25,5 @@ jobs:
           context: ./build
           file: build/helsinki/Dockerfile
           tags: |
-            islamicnetwork/cdn:helsinki-latest
-            islamicnetwork/cdn:helsinki-${{ github.ref_name }}
+            ghcr.io/islamic-network/cdn:helsinki-latest
+            ghcr.io/islamic-network/cdn:helsinki-${{ github.ref_name }}

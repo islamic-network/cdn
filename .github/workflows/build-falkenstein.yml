@@ -25,5 +25,5 @@ jobs:
           context: ./build
           file: build/falkenstein/Dockerfile
           tags: |
-            islamicnetwork/cdn:falkenstein-latest
-            islamicnetwork/cdn:falkenstein-${{ github.ref_name }}
+            ghcr.io/islamic-network/cdn:falkenstein-latest
+            ghcr.io/islamic-network/cdn:falkenstein-${{ github.ref_name }}
