@@ -75,7 +75,7 @@ jobs:
           key:  ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: sudo docker exec -t islamic-network-cdn ./purge ${{ steps.vars.outputs.purgepath }} /var/cache/cdn || true
-  Purge-Frankfurt-PoP:
+  Purge-Falkenstein-PoP:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -87,7 +87,7 @@ jobs:
       - name: SSH Remote Commands
         uses: appleboy/ssh-action@v0.1.4
         with:
-          host: cdn.frankfurt.islamic.network
+          host: cdn.falkenstein.islamic.network
           username: ${{ secrets.SSH_USER }}
           key:  ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
@@ -126,7 +126,7 @@ jobs:
           key:  ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script: sudo docker exec -t islamic-network-cdn ./purge ${{ steps.vars.outputs.purgepath }} /var/cache/cdn || true
-  Purge-Sydney-PoP:
+  Purge-Karachi-PoP:
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository code
@@ -138,7 +138,7 @@ jobs:
       - name: SSH Remote Commands
         uses: appleboy/ssh-action@v0.1.4
         with:
-          host: cdn.sydney.islamic.network
+          host: cdn.karachi.islamic.network
           username: ${{ secrets.SSH_USER }}
           key:  ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
@@ -155,7 +155,7 @@ jobs:
       - name: SSH Remote Commands
         uses: appleboy/ssh-action@v0.1.4
         with:
-          host: cdn.sydney.islamic.network
+          host: cdn.helsinki.islamic.network
           username: ${{ secrets.SSH_USER }}
           key:  ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
