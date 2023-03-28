@@ -1,4 +1,4 @@
-name: Deploy to Dubai PoP
+name: Deploy to Karachi PoP
 on:
   workflow_dispatch: 
   push:
