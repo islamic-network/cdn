@@ -18,7 +18,7 @@ jobs:
           host: cdn.dubai.islamic.network
           username: ubuntu
           key:  ${{ secrets.SSH_KEY }}
-          port: ${{ secrets.SSH_PORT }}
+          port: 22
           script_stop: true
           script: |
             sudo -S sh -c 'cd /root/cdn && git pull origin master --rebase && cd /root/cdn/deploy && docker compose -f docker-compose-dubai.yml up -d'
