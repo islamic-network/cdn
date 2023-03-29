@@ -1,6 +1,6 @@
 FROM nginx:1.23
 
-COPY pop/nginx.conf /etc/nginx/nginx.conf
+COPY 15gb/nginx.conf /etc/nginx/nginx.conf
 COPY common/sites-available/* /etc/nginx/templates/
 COPY common/purge.sh /purge
 RUN  chmod 775 /purge
