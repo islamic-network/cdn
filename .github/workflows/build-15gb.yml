@@ -1,4 +1,4 @@
-name: Docker Build - Singapore
+name: Docker Build - 15GB
 on:
   push:
     tags:
@@ -24,7 +24,7 @@ jobs:
         with:
           push: true
           context: ./build
-          file: build/singapore/Dockerfile
+          file: build/15gb/Dockerfile
           tags: |
-            ghcr.io/islamic-network/cdn:singapore-latest
-            ghcr.io/islamic-network/cdn:singapore-${{ github.ref_name }}
+            ghcr.io/islamic-network/cdn:15gb-latest
+            ghcr.io/islamic-network/cdn:15gb-${{ github.ref_name }}

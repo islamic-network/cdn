@@ -1,4 +1,4 @@
-name: Docker Build - Dubai
+name: Docker Build - 70GB
 on:
   push:
     tags:
@@ -24,7 +24,7 @@ jobs:
         with:
           push: true
           context: ./build
-          file: build/dubai/Dockerfile
+          file: build/70gb/Dockerfile
           tags: |
-            ghcr.io/islamic-network/cdn:dubai-latest
-            ghcr.io/islamic-network/cdn:dubai-${{ github.ref_name }}
+            ghcr.io/islamic-network/cdn:70gb-latest
+            ghcr.io/islamic-network/cdn:70gb-${{ github.ref_name }}

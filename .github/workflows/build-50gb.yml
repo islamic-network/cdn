@@ -1,4 +1,4 @@
-name: Docker Build - Falkenstein
+name: Docker Build - 50GB
 on:
   push:
     tags:
@@ -24,7 +24,7 @@ jobs:
         with:
           push: true
           context: ./build
-          file: build/falkenstein/Dockerfile
+          file: build/50gb/Dockerfile
           tags: |
-            ghcr.io/islamic-network/cdn:falkenstein-latest
-            ghcr.io/islamic-network/cdn:falkenstein-${{ github.ref_name }}
+            ghcr.io/islamic-network/cdn:50gb-latest
+            ghcr.io/islamic-network/cdn:50gb-${{ github.ref_name }}
