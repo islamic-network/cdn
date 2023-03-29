@@ -16,7 +16,7 @@ jobs:
         uses: appleboy/ssh-action@v0.1.5
         with:
           host: cdn.dubai.islamic.network
-          username: ${{ secrets.SSH_USER }}
+          username: ubuntu
           key:  ${{ secrets.SSH_KEY }}
           port: ${{ secrets.SSH_PORT }}
           script_stop: true
