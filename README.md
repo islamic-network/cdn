@@ -51,7 +51,6 @@ Then generate the certificates:
  -d cdn.singapore.islamic.network \
  -d cdn.london.islamic.network \
  -d cdn.mumbai.islamic.network \
- -d cdn.karachi.islamic.network \
  -d cdn.newark.islamic.network \
  -d cdn.dallas.islamic.network \
  -d cdn.dubai.islamic.network \
