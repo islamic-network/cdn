@@ -13,6 +13,6 @@ server {
     proxy_cache cdn;
     proxy_cache_key $uri$is_args$args;
     proxy_cache_valid 90d;
-    proxy_pass http://${ALADHAN_CDN_ORIGIN};
+    proxy_pass https://${ALADHAN_CDN_ORIGIN};
     }
   }
